@@ -1,7 +1,8 @@
 package com.cyw.TalkRobot.entity.PO.response;
 
-import com.entity.PO.robot.DialogState;
-import com.entity.PO.robot.SessionPO;
+import com.cyw.TalkRobot.entity.PO.robot.SessionPO;
+import com.cyw.TalkRobot.entity.PO.robot.DialogState;
+
 import lombok.Data;
 
 import java.util.List;

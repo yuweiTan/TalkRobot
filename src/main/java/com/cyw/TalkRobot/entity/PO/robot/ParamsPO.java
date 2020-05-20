@@ -15,7 +15,7 @@ public class ParamsPO {
      */
     private String version;
     /**
-     * 【必需】机器人ID，service_id 与skill_ids不能同时缺失，至少一个有值。
+     * 【必需 2选1】机器人ID，service_id 与skill_ids不能同时缺失，至少一个有值。
      */
     private String service_id;
     /**
@@ -23,7 +23,7 @@ public class ParamsPO {
      */
     private List<String> skill_ids;
     /**
-     * 【必需 2选1】开发者需要在客户端生成的唯一id，用来定位请求，响应中会返回该字段。对话中每轮请求都需要一个log_id
+     * 【必需】开发者需要在客户端生成的唯一id，用来定位请求，响应中会返回该字段。对话中每轮请求都需要一个log_id
      */
     private String log_id;
     /**

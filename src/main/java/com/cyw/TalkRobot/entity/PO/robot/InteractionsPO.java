@@ -1,6 +1,6 @@
 package com.cyw.TalkRobot.entity.PO.robot;
 
-import com.entity.PO.response.ResponseListPO;
+import com.cyw.TalkRobot.entity.PO.response.ResponseListPO;
 import lombok.Data;
 
 import java.util.List;

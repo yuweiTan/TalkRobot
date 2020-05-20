@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Say Hello</title>
+    <style type="text/css">
+        .app{
+            width:60%;
+            height:1000px;
+            margin-left:20%;
+        }
+        .info{
+            border: 1px solid #000;
+            width: 100%;
+            height: 80%;
+        }
+        .talk{
+            display: block;
+            border: 1px solid #000;
+            width: 100%;
+            height: 20%;
+            line-height:24px;
+            font-size:14px;
+        }
+        .talk:empty::before {
+            content: attr(placeholder);
+        }
+    </style>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        document.onkeydown = function (e) { // 回车提交表单
+            // 兼容FF和IE和Opera
+            var theEvent = window.event || e;
+            var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+            if (code == 13) {
+                var sayStr = document.getElementsByClassName("talk").value;
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8090/talk/say",
+                    contentType: 'application/json;charset=utf-8', //设置请求头信息
+                    data: "say=" + sayStr, //必须是字符串
+                    dataType: "jsonp",
+                    success: function (res) {
+                        console.log(res);
+                    },
+                    error: function (result) {
+                        console.log(result);
+                    }
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="app">
+        <div class="info"></div>
+        <input class="talk" />
+    </div>
+</body>
+</html>
